@@ -10,7 +10,7 @@ const inter = Inter({ subsets: ["latin"] })
 export const metadata: Metadata = {
   title: "Car's Empire",
   description: "Professional automotive services",
-  icons: "/favicon.ico"
+  icons: "/favicon.ico",
 }
 
 export default function RootLayout({
