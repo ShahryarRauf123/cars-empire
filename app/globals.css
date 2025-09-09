@@ -1,0 +1,114 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%; /* White */
+    --foreground: 222.2 84% 4.9%; /* Near Black */
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 174 34% 42%; /* #48968D - Main brand color (Green) */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 174 60% 46%; /* #2CB9AD - Secondary brand color (Lighter Green) */
+    --secondary-foreground: 0 0% 100%;
+    --muted: 210 40% 96%; /* Light Grey */
+    --muted-foreground: 174 20% 35%; /* Muted Greenish Text */
+    --accent: 174 60% 46%; /* #2CB9AD - Active states */
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 174 34% 42%;
+    --radius: 0.5rem;
+    --chart-1: 174 34% 42%;
+    --chart-2: 174 60% 46%;
+    --chart-3: 174 20% 35%;
+    --chart-4: 300 7% 13%;
+    --chart-5: 300 4% 13%;
+  }
+
+  .dark {
+    --background: 220 10% 10%; /* Charcoal Grey */
+    --foreground: 0 0% 100%; /* White */
+    --card: 220 10% 15%; /* Slightly lighter charcoal for cards */
+    --card-foreground: 0 0% 100%;
+    --popover: 220 10% 15%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 174 60% 46%; /* Green (same as light theme primary) */
+    --primary-foreground: 220 10% 10%; /* Charcoal Grey */
+    --secondary: 174 34% 42%; /* Lighter Green (same as light theme secondary) */
+    --secondary-foreground: 0 0% 100%;
+    --muted: 220 5% 25%; /* Dark Grey */
+    --muted-foreground: 174 20% 70%; /* Lighter muted green text */
+    --accent: 174 60% 46%;
+    --accent-foreground: 220 10% 10%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 220 10% 20%;
+    --input: 220 10% 20%;
+    --ring: 174 60% 46%;
+    --chart-1: 174 34% 42%;
+    --chart-2: 174 60% 46%;
+    --chart-3: 174 20% 35%;
+    --chart-4: 220 10% 10%;
+    --chart-5: 220 5% 25%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Page transition animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.page-enter {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Custom loader animations */
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.8);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+}
+
+.animate-pulse-ring {
+  animation: pulse-ring 1.5s ease-out infinite;
+}
+
+.text-gradient-primary {
+  background-image: linear-gradient(to right, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent; /* Fallback for browsers that don't support text-fill-color */
+}
